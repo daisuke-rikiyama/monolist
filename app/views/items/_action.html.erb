@@ -10,7 +10,7 @@
   <% else %>
     <%= render 'items/have' , item: item %>
   <% end %>
-
+  
   <% unless current_page?(item) %>
     <%= link_to "詳細" , item , class: "btn btn-info btn-sm" %>
   <% end %>
