@@ -1,0 +1,23 @@
+<div class="ranking_form">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="ranking_body row">
+            <% items.each do |i=0, item| %>
+                <div class="rank col-md-2">
+                    <%= puts i+1 位%>
+                </div>
+                <div class="item col-md-10">
+                    <div class="row">
+                        <div class="item_image">
+                            <% unless item.large_image == nil %>
+                                <%= image_tag item.large_image, alt: item.title %>
+                            <% else %>
+                                <%= image_tag 'no-image.png', alt: item.title %>
+                            <% end %>
+                        </div>
+                        <div class="item_name"><%= item.title %></div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
