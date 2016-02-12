@@ -1,2 +1,10 @@
-<h1>Wanted items ranking</h1>
-<%= render 'form' items: @items %>
+<% content_for :head do %>
+    <title>Wanted Items Ranking - Monolist</title>
+    <meta name="description" content="商品のWant数ランキングのページ、１０位までの商品を表示しています。">
+<% end %>
+<div align="center">
+    <h1>Wanted Items Ranking!!</h1>
+</div>
+<br>
+<br>
+<%= render 'form', items: @items %>

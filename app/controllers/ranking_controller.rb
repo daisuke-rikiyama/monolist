@@ -1,10 +1,14 @@
 class RankingController < ApplicationController
     #haveされているアイテムのランキング表示
     def have
-        @items = Item.all.order("have_users DESC").limit(10)
+        @item_ids = Have.group(:item_id).order('count_item_id desc').limit(10).count('item_id').keys
+        @type = "haves"
+        @items = Item.find(@item_ids)
     end
     #wantされているアイテムのランキング表示
     def want
-        @items = Item.all.order("want_users DESC").limit(10)
+        @item_ids = Want.group(:item_id).order('count_item_id desc').limit(10).count('item_id').keys
+        @type = "wants"
+        @items = Item.find(@item_ids)
     end
 end

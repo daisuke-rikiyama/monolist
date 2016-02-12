@@ -74,3 +74,43 @@ user3.follow(user6)
 user4.follow(user1)
 user4.follow(user2)
 user4.follow(user3)
+
+users = User.all
+items = Item.all
+item1 = items.first
+item2 = items[2..9]
+item3 = items[5..7]
+item4 = items[10]
+item5 = items[20..25]
+item6 = items[13..18]
+item7 = items[11..19]
+item8 = items[6..9]
+item9 = items[15..23]
+
+users.each do |user|
+    user.want(item4)
+end
+
+item2.each do |item|
+    user5.want(item)
+end
+
+item3.each do |item|
+    user7.want(item)
+end
+
+item3.each do |item|
+    user10.want(item)
+end
+
+item8.each do |item|
+    user18.want(item)
+end
+
+item9.each do |item|
+    user14.want(item)
+end
+
+item5.each do |item|
+    user9.want(item)
+end
